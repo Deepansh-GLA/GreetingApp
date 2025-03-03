@@ -1,9 +1,6 @@
 package repository;
 
-import model.Greeting;
-import org.springframework.stereotype.Repository;
 
-package com.example.greeting.repository;
 
 import com.example.greeting.model.Greeting;
 import org.springframework.data.jpa.repository.JpaRepository;

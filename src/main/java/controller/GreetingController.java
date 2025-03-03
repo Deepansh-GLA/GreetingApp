@@ -6,6 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
+import com.example.greeting.model.Greeting;
+import com.example.greeting.Services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/greet")
@@ -37,12 +44,17 @@ public class GreetingController {
     public Greeting addGreeting(@RequestBody Greeting greeting) {
         return greetingService.addGreeting(greeting);
     }
+    @GetMapping("/all")
+    public List<Greeting> getAllGreetings() {
+        return greetingService.getAllGreetings();
+    }
 
     // ✅ Get Greeting by ID
     @GetMapping("/{id}")
-    public Greeting getGreeting(@PathVariable long id) {
+    public Greeting getGreetingById(@PathVariable long id) {
         return greetingService.getGreetingById(id);
     }
+
 
     // ✅ Create Greeting (Returns JSON)
     @PostMapping
@@ -61,4 +73,5 @@ public class GreetingController {
     public Greeting deleteGreeting() {
         return new Greeting(0, "Greeting deleted successfully!");
     }
+
 }
