@@ -1,7 +1,5 @@
 package model;
 
-
-
 public class Greeting {
     private long id;
     private String message;

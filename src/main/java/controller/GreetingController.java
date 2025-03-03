@@ -1,6 +1,8 @@
 package controller;
 
+import Services.GreetingService;
 import model.Greeting;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -12,8 +14,17 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
     private static final String template = "Hello, %s!";
 
+    @Autowired
+    private GreetingService greetingService;
+
+    @GetMapping("/service")
+    public Greeting getServiceGreeting() {
+        return new Greeting(counter.incrementAndGet(), greetingService.getGreetingMessage());
+    }
+
+
     @GetMapping
-    public Greeting getGreeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public Greeting getDefaultGreeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 
