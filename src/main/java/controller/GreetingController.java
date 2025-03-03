@@ -1,11 +1,6 @@
 package controller;
 
-import Services.GreetingService;
-import model.Greeting;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.concurrent.atomic.AtomicLong;
 import com.example.greeting.model.Greeting;
 import com.example.greeting.Services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,8 +73,9 @@ public class GreetingController {
     public Greeting updateGreeting(@PathVariable Long id, @RequestBody Greeting greeting) {
         return greetingService.updateGreeting(id, greeting);
     }
-
-
-
+    @DeleteMapping("/{id}")
+    public String deleteGreeting(@PathVariable Long id) {
+        return greetingService.deleteGreeting(id);
+    }
 
 }

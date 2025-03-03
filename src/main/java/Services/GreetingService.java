@@ -1,5 +1,6 @@
 package Services;
 
+
 import com.example.greeting.model.Greeting;
 import com.example.greeting.repository.GreetingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,14 @@ public class GreetingService {
             return greetingRepository.save(updated);
         }
         return new Greeting(0L, "Greeting not found!");
+    }
+    public String deleteGreeting(Long id) {
+        if (greetingRepository.existsById(id)) {
+            greetingRepository.deleteById(id);  // ✅ Delete the greeting from DB
+            return "Greeting with ID " + id + " deleted successfully!";
+        } else {
+            return "Greeting with ID " + id + " not found!";
+        }
     }
 
 
