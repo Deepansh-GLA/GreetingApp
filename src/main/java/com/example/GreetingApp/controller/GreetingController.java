@@ -1,8 +1,8 @@
-package controller;
+package com.example.GreetingApp.controller;
 
 
-import com.example.greeting.model.Greeting;
-import com.example.greeting.Services.GreetingService;
+import com.example.GreetingApp.model.Greeting;
+import com.example.GreetingApp.Services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,5 +77,4 @@ public class GreetingController {
     public String deleteGreeting(@PathVariable Long id) {
         return greetingService.deleteGreeting(id);
     }
-
 }

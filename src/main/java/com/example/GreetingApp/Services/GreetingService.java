@@ -1,8 +1,8 @@
-package Services;
+package com.example.GreetingApp.Services;
 
 
-import com.example.greeting.model.Greeting;
-import com.example.greeting.repository.GreetingRepository;
+import com.example.GreetingApp.model.Greeting;
+import com.example.GreetingApp.repository.GreetingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +62,4 @@ public class GreetingService {
             return "Greeting with ID " + id + " not found!";
         }
     }
-
-
 }
