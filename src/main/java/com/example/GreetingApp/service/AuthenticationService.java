@@ -22,9 +22,12 @@ public class AuthenticationService {
     private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
+    private emailService email;
+
+    @Autowired
     private jutil jutil;
 
-    // Secret key for JWT
+
 
     // Method for user registration
     @Transactional
@@ -48,7 +51,7 @@ public class AuthenticationService {
         String token = jutil.generateToken(user);
 
         // Send Email Notification to the User
-
+        email.sendEmailNotification(user.getEmail(), token);
         return new ResponseDTO("success", "User registered successfully. A verification token has been sent to your email.");
     }
 
@@ -66,8 +69,11 @@ public class AuthenticationService {
         // Generate a new JWT token
         String token = jutil.generateToken(user);
 
+        // Send login notification (this could be an email or SMS)
+        email.sendLoginNotification(user.getEmail());
 
         return new ResponseDTO("success", "User logged in successfully.", token);
     }
+
 
 }
