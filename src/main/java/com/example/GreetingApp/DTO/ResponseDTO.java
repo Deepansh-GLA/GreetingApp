@@ -1,7 +1,6 @@
 package com.example.GreetingApp.DTO;
 
 
-
 public class ResponseDTO {
 
     private String status;

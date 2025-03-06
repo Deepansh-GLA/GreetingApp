@@ -1,7 +1,6 @@
 package com.example.GreetingApp.model;
 
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
