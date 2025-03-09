@@ -1,6 +1,5 @@
 package com.example.GreetingApp.service;
 
-
 import org.hibernate.annotations.SecondaryRow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

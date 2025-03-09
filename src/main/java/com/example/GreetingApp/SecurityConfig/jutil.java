@@ -1,6 +1,5 @@
 package com.example.GreetingApp.SecurityConfig;
 
-
 import com.example.GreetingApp.model.AuthUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

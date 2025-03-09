@@ -1,6 +1,5 @@
 package com.example.GreetingApp.DTO;
 
-
 public class ResponseDTO {
 
     private String status;
@@ -45,3 +44,4 @@ public class ResponseDTO {
         this.token = token;
     }
 }
+

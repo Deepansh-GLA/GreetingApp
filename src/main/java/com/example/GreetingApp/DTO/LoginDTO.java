@@ -1,5 +1,4 @@
 package com.example.GreetingApp.DTO;
-
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
